@@ -88,6 +88,18 @@ Allows to create a chart for graphical representation for objective functions wi
 * addConstraintGreaterThan - samve as above
 * createChart - no parameters needed, creates chart from given data
 
+Example (also available in examples.py):
+```
+s = Simplex([8, 5], 'max')
+s.addConstraintLessThan([6, 10], 45)
+s.addConstraintLessThan([9, 5], 45)
+s.solve()
+
+Please specify the maximum range of x for graphical interpretation for this calculations (upper boundary, inclusive, should be an integer): 6
+```
+
+Will result as:
+![alt Simplex_img](http://i.imgur.com/hWOxU1O.png)
 
 ## Contributors
 * https://github.com/trutniov

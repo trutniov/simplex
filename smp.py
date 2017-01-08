@@ -1,7 +1,8 @@
+print('Importing dependencies...')
 from numpy import *
 import functools
 from smpchart import SimplexChart
-
+print('Executing...')
 DBG = 0
 WRITE_TO_FILE = 1
 WRITE_TO_CONSOLE = 1
