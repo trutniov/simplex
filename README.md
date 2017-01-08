@@ -50,13 +50,17 @@ You will find more usage examples here.
 Allows you to use simplex script on file with data.
 
 Required input file structure:
-number_of_variables
-type_of_optimization ('min' or 'max')
-number_of_less_than_function_constraints
-number_of_equal_function_constraints
-number_of_greater_than_function_constraints
-less_than_functions_factors
-equal_function_factors
-greater_than_function_factors
+* number_of_variables
+* type_of_optimization ('min' or 'max')
+* number_of_less_than_function_constraints
+* number_of_equal_function_constraints
+* number_of_greater_than_function_constraints
+* less_than_functions_factors
+* equal_function_factors
+* greater_than_function_factors
 
 See an example file: sample_input.txt
+
+## Contributors
+* https://github.com/trutniov
+* https://github.com/izabelaplokita
