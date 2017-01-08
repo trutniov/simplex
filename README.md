@@ -55,11 +55,27 @@ Required input file structure:
 * number_of_less_than_function_constraints
 * number_of_equal_function_constraints
 * number_of_greater_than_function_constraints
+* objective_function_factors
 * less_than_functions_factors
 * equal_function_factors
 * greater_than_function_factors
 
 See an example file: sample_input.txt
+
+### simplexFromConsole.py
+
+Allows you to use simplex script passing data from console.
+
+You will be asked to pass consecutively:
+* number of variables in objective function
+* type of optimization ('min' or 'max', default is 'min')
+* number of less or equal than (<=) function constraints
+* number of equal (=) function constraints
+* number of greater or equal than (>=) function constraints
+* objective function factors
+* less or equal than function constraints factors
+* equal function constraints factors
+* greater or equal than function constraints factors
 
 ## Contributors
 * https://github.com/trutniov
