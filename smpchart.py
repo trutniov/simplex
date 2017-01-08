@@ -78,13 +78,13 @@ class SimplexChart:
             x = self.xRange,
             y = yLessThan,
             fill = 'tozerox',
-            name = 'Lower or equal than constrains boundary'
+            name = 'Lower than or equal constrains boundary'
         )
 
         traceGreaterThan = Scatter(
             x = self.xRange,
             y = yGreaterThan,
-            name = 'Greater or equal than constrains boundary'
+            name = 'Greater than or equal constrains boundary'
         )
 
         traceEqual = Scatter(
