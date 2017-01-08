@@ -1,5 +1,4 @@
 from smp import Simplex
-from smpchart import SimplexChart
 
 def checkIfValidInteger(value, biggerThanZero = False):
     try:
@@ -127,23 +126,3 @@ if __name__ == '__main__':
     s.solve()
 
     print('All simplex tables have been saved in csv format, named tab+number of step')
-
-    if numOfVariables == 2:
-        sc = SimplexChart()
-        rangeString = input('Please specify the maximum range of x for graphical interpretation for this calculations (upper boundary, inclusive, should be an integer): ')
-        while sc.chartXRangeIsValid(rangeString) == False:
-            rangeString = input('Please specify a valid maximum range of x for graphical interpretation for this calculations (upper boundary, inclusive, should be an integer): ')
-        print('Preparing chart...')
-        
-        sc.saveXRange(rangeString)
-
-        for constraint in lessThanInequalities:
-            sc.addConstraintLessThan(constraint)
-
-        for constraint in equalities:
-            s.addConstraintEqual(constraint)
-
-        for constraint in greaterThanInequalities:
-            s.addConstraintGreaterThan(constraint)
-
-        sc.createChart()

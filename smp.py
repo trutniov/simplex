@@ -1,9 +1,11 @@
 from numpy import *
 import functools
+from smpchart import SimplexChart
 
 DBG = 0
 WRITE_TO_FILE = 1
 WRITE_TO_CONSOLE = 1
+CREATE_CHART = 1
 MAX_ITER = 300
 
 class Simplex: 
@@ -74,6 +76,27 @@ class Simplex:
         if (WRITE_TO_FILE):
             thefile.write('fval = %f\n' % (fval))
             thefile.write('iterations: %d' %(self.counter-1))
+
+        if CREATE_CHART and self.vars == 2:
+            sc = SimplexChart()
+    
+            rangeString = input('Please specify the maximum range of x for graphical interpretation for this calculations (upper boundary, inclusive, should be an integer): ')
+            while sc.chartXRangeIsValid(rangeString) == False:
+                rangeString = input('Please specify a valid maximum range of x for graphical interpretation for this calculations (upper boundary, inclusive, should be an integer): ')
+            print('Preparing chart...')
+        
+            sc.saveXRange(rangeString)
+
+            for i in range(len(self.cons_less_than)):
+                sc.addConstraintLessThan(self.rows_less_than[i], self.cons_less_than[i])
+
+            for i in range(len(self.cons_eq)):
+                sc.addConstraintEqual(self.rows_eq[i], self.cons_eq[i])
+
+            for i in range(len(self.cons_greater_than)):
+                sc.addConstraintGreaterThan(self.rows_greater_than[i], self.cons_greater_than[i])
+
+            sc.createChart()
    
                 
     def _build(self):

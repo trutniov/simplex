@@ -14,17 +14,14 @@ class SimplexChart:
         xRange = self._parseChartXRange(xRangeAsString)
         self.xRange = list(range(0, xRange))
 
-    def addConstraintLessThan(self, constraint):
-        values = constraint['leftSide'] + [constraint['rightSide']]
-        self.constraintsLessThan.append(values)
+    def addConstraintLessThan(self, constraintLeftSide, constraintRightSide):
+        self.constraintsLessThan.append(constraintLeftSide[1:] + [constraintRightSide])
 
-    def addConstraintGreaterThan(self, constraint):
-        values = constraint['leftSide'] + [constraint['rightSide']]
-        self.constraintsGreaterThan.append(values)
+    def addConstraintGreaterThan(self, constraintLeftSide, constraintRightSide):
+        self.constraintsGreaterThan.append(constraintLeftSide[1:] + [constraintRightSide])
 
-    def addConstraintEqual(self, constraint):
-        values = constraint['leftSide'] + [constraint['rightSide']]
-        self.constraintsEqual.append(values)
+    def addConstraintEqual(self, constraintLeftSide, constraintRightSide):
+        self.constraintsEqual.append(constraintLeftSide[1:] + [constraintRightSide])
 
     def chartXRangeIsValid(self, valuesAsString):
         valuesAsList = valuesAsString.split()
