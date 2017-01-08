@@ -77,6 +77,18 @@ You will be asked to pass consecutively:
 * equal function constraints factors
 * greater or equal than function constraints factors
 
+### smpchart.py 
+
+Allows to create a chart for graphical representation for objective functions with two variables constraints.
+* SimplexChart class - no parameters needed for constructor
+* chartXRangeIsValid - accepts one parameter (string), verifies if passed xRange is valid (integer greater than 0)
+* saveXRange - accepts one parameter (string), maximum range of x on chart
+* addConstraintLessThan - accepts two parameters, a list of factors of constraint function, and a constraint value
+* addConstraintEqual - same as above
+* addConstraintGreaterThan - samve as above
+* createChart - no parameters needed, creates chart from given data
+
+
 ## Contributors
 * https://github.com/trutniov
 * https://github.com/izabelaplokita
